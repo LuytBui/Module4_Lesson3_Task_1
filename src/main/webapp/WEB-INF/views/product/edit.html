@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="product/layout :: head">
+</head>
+<body>
+<div th:replace="product/layout ::navbar"></div>
+<div class="container">
+    <form th:action="@{/products/edit}" method="post" th:object="${product}">
+        <input type="hidden" class="form-control" id="id" th:field="*{id}">
+        <div class="mb-3">
+            <label for="name" class="form-label">Product name</label>
+            <input type="text" class="form-control" id="name" th:field="*{name}">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="price" th:field="*{price}">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" id="description" th:field="*{description}">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Product Image</label>
+            <input type="text" class="form-control" id="image" th:field="*{image}">
+        </div>
+        <button type="submit" class="btn btn-primary">Accept</button>
+    </form>
+</div>
+</body>
+</html>

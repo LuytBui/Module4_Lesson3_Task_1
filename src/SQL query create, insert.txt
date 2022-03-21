@@ -1,0 +1,16 @@
+drop database product_management;
+create database product_management;
+use product_management;
+create table products(
+    id int auto_increment primary key,
+    name varchar(40) not null ,
+    price bigint check (price > 0),
+    description varchar(50) default '',
+    image varchar(500)
+);
+
+insert into products (name, price, description, image) values
+    ('Iphone 13 Promax 128Gb (VN/A) Silver', 33990000, 'new', 'https://cdn.tgdd.vn/Products/Images/42/230529/iphone-13-pro-max-silver-2.jpg')
+    , ('Samsung Galaxy S22 Ultra 5G 256GB', 33990000, 'new', 'https://images.samsung.com/vn/smartphones/galaxy-s22-ultra/buy/S22Ultra_ColorSelection_Green_MO.jpg')
+    , ('Samsung Galaxy Z Fold3 5G 256GB', 41990000, 'new', 'https://cdn.tgdd.vn/Products/Images/42/226935/samsung-galaxy-z-fold-3-silver-1-600x600.jpg')
+;
